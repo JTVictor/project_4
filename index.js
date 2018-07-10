@@ -1,13 +1,20 @@
 const express = require('express');
 const app = express();
-const port = 4000;
+// const bodyParser = require('body-parser');
+// const errorHandler = require('./lib/errorHandler');
 
-app.use(express.static(`${__dirname}/public`));
+const routes = require('./config/routes');
 
+const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
+const { dbURI, port } = require('./config/environment');
 
-app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+mongoose.connect(dbURI);
 
-app.listen(port, () => console.log(`Express running on port ${port}`));
+// app.use(bodyParser.json());
+app.use('/api', routes);
 
-module.exports = app;
+// app.use(errorHandler);
+
+app.listen(port, () => console.log(`Up and running on port ${port}`));
