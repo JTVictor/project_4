@@ -3,7 +3,7 @@ mongoose.Promise = require('bluebird');
 
 const { dbURI } = require('../config/environment');
 
-const Wishlist = require('../models/user');
+const Wishlist = require('../models/wishlist');
 
 mongoose.connect(dbURI, (err, db) => {
   db.dropDatabase()

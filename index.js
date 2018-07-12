@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 // const errorHandler = require('./lib/errorHandler');
 
 const routes = require('./config/routes');
@@ -12,7 +12,9 @@ const { dbURI, port } = require('./config/environment');
 
 mongoose.connect(dbURI);
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json({
+  limit: '500kb'
+}));
 app.use('/api', routes);
 
 // app.use(errorHandler);

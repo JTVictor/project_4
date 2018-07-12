@@ -1,4 +1,4 @@
-const Wishlist = require('../models/user');
+const Wishlist = require('../models/wishlist');
 
 function indexRoute(req, res, next) {
   Wishlist.find()
