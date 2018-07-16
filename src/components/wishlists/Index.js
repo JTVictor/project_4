@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Base64 from '../../common/Base64';
+import Auth from '../auth/Auth';
 
 class WishlistsIndex extends React.Component {
 
@@ -15,7 +16,7 @@ class WishlistsIndex extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/wishlists')
+    axios.get('/api/wishlists', { headers: { 'Authorization': `Bearer ${Auth.getToken()}` }})
       .then(res => this.setState({ wishlists: res.data }));
   }
 
@@ -56,7 +57,7 @@ class WishlistsIndex extends React.Component {
                 <div className="card">
                   <div className="card-content">
                     <div className="content">
-                      <h2 className="title">{wishlist.listOwner}</h2>
+                      <h2 className="title">{wishlist.event}</h2>
                     </div>
                   </div>
                 </div>

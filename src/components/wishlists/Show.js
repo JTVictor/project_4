@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import Base64 from '../../common/Base64';
-import Auth from '../../lib/Auth';
+import Auth from '../auth/Auth';
 
 class WishlistsShow extends React.Component {
 
@@ -68,19 +68,25 @@ class WishlistsShow extends React.Component {
           <button>Submit</button>
         </form>
 
-        <div className="card">
-          {/* <div className="card-content"> */}
-            {/* <figure className="image is-10x10"> */}
-              <div className="content">
-                {this.state.wishlist.items.map((item, index) =>
-                  <div key={index}>
-                    <img src={item.image} />
-                    <h4>{item.label}</h4>
+
+
+
+
+        <div className="columns is-multiline">
+          {this.state.wishlist.items.map((item, index) =>
+            <div className="column is-one-quarter" key={index}>
+              <div className="card">
+                <div className="card-content">
+                  <div className="content">
+                    <div>
+                      <img className="giftImage" src={item.image} />
+                      <h4>{item.label}</h4>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
-            {/* </figure> */}
-          {/* </div> */}
+            </div>
+          )}
         </div>
 
       </section>

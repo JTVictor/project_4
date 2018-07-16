@@ -5,7 +5,7 @@ const secureRoute = require('../lib/secureRoute');
 const vision = require('../controllers/vision');
 
 router.route('/wishlists')
-  .get(wishlists.index)
+  .get(secureRoute, wishlists.index)
   .post(secureRoute, wishlists.create);
 
 router.route('/wishlists/:id')

@@ -1,7 +1,7 @@
 const Wishlist = require('../models/wishlist');
 
 function indexRoute(req, res, next) {
-  Wishlist.find()
+  Wishlist.find({ owner: req.currentUser })
     .then(wishlists => res.json(wishlists))
     .catch(next);
 }
@@ -13,6 +13,7 @@ function showRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
+  req.body.owner = req.currentUser; // here we attach the currently logged in user to the body of the request (the wishlist data)
   Wishlist.create(req.body)
     .then(wishlist => res.status(201).json(wishlist))
     .catch(next);

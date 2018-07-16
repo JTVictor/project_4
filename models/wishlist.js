@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 // const moment = require('moment');
 
 const wishlistSchema = new mongoose.Schema({
-  listOwner: String,
+  // listOwner: String,
+  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   event: String ,
   date: Number,
   items: [{
