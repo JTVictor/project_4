@@ -50,6 +50,8 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.3.1",
     "react-select": "^1.2.1",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
     "sinon": "^6.1.3"
   }
 }

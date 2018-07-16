@@ -11,14 +11,18 @@ mongoose.connect(dbURI, (err, db) => {
       listOwner: 'Jon Townsend',
       event: 'Birthday',
       date: '20190601',
-      item: {image: 'https://media.manufactum.de/is/image/Manufactum/opengraph/italian-stainless-steel-kettle--20294_01.jpg', obtained: 'false'},
-      listComplete: 'false'
+      items: [
+        {image: 'https://media.manufactum.de/is/image/Manufactum/opengraph/italian-stainless-steel-kettle--20294_01.jpg', obtained: false}
+      ],
+      listComplete: false
     }, {
       listOwner: 'Santa Claus',
-      event: 'Christams',
+      event: 'Christmas',
       date: '20191225',
-      item: {image: 'https://cdn.shopify.com/s/files/1/1180/3866/products/NEW-FEDEX-SOCKS-2710v2_1500x.jpg?v=1495468418', obtained: 'false'},
-      listComplete: 'false'
+      items: [
+        {image: 'https://cdn.shopify.com/s/files/1/1180/3866/products/NEW-FEDEX-SOCKS-2710v2_1500x.jpg?v=1495468418', obtained: false}
+      ],
+      listComplete: false
     }]))
     .then(wishlists => console.log(`${wishlists.length} wishlists created`))
     .catch(err => console.log(err))

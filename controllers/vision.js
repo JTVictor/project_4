@@ -6,8 +6,8 @@ function getVisionPic(req, res, next) {
   const request = {
     requests: [
       {
-        image: { content: req.body.image },
-        features: [{ type: 'LABEL_DETECTION' }]
+        image: { content: req.body.image.replace(/data:image\/.+;base64,/, '') },
+        features: [{ type: 'WEB_DETECTION' }]
       }
     ]
   };
@@ -18,7 +18,7 @@ function getVisionPic(req, res, next) {
     body: request,
     json: true
   })
-    .then(response => res.json(response.responses[0].labelAnnotations))
+    .then(response => res.json(response.responses[0].webDetection.bestGuessLabels[0]))
     .catch(next);
 }
 

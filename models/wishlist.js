@@ -5,7 +5,11 @@ const wishlistSchema = new mongoose.Schema({
   listOwner: String,
   event: String ,
   date: Number,
-  item: { image: String, obtained: Boolean },
+  items: [{
+    image: String,
+    label: String,
+    obtained: Boolean
+  }],
   listComplete: Boolean
 });
 
