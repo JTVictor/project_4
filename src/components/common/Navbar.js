@@ -27,28 +27,26 @@ class Navbar extends React.Component {
     console.log(Auth.isAuthenticated());
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <Link to="/" className="navbar-item">
-            <img src="http://icongal.com/gallery/image/174536/gift_box_present_dropbox_christmas.png" height="50" />
-          </Link>
 
-          <a role="button"
-            className={`navbar-burger${this.state.navbarOpen ? ' is-active' : ''}`}
-            aria-label="menu"
-            aria-expanded="false"
-            onClick={this.toggleNavbar}
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
+
+
+        <a role="button"
+          className={`navbar-burger${this.state.navbarOpen ? ' is-active' : ''}`}
+          aria-label="menu"
+          aria-expanded="false"
+          onClick={this.toggleNavbar}
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+
 
         <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
           <div className="navbar-end">
-            <Link to="/criminals"  className="navbar-item">All of your Wishlists</Link>
+            <Link to="/criminals"  className="navbar-item">Wishlists</Link>
 
-            {Auth.isAuthenticated() && <Link to="/wishlists/new" className="navbar-item">New Wishlist</Link>}
+            {Auth.isAuthenticated() && <Link to="/wishlists/new" className="navbar-item">New</Link>}
 
             {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
 

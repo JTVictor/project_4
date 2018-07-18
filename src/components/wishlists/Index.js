@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Base64 from '../../common/Base64';
+// import Base64 from '../../common/Base64';
 import Auth from '../auth/Auth';
 
 class WishlistsIndex extends React.Component {
@@ -37,18 +37,7 @@ class WishlistsIndex extends React.Component {
   render() {
     return (
       <section>
-        <div className="filters">
-          <input className="input" placeholder="Search" onChange={this.handleSearch} />
 
-          <div className="control">
-            <div className="select is-fullwidth">
-              <select onChange={this.handleSort}>
-                <option value="name|asc">Name (A-Z)</option>
-                <option value="name|desc">Name (Z-A)</option>)
-              </select>
-            </div>
-          </div>
-        </div>
 
         <div className="columns is-multiline">
           {this.state.wishlists.map(wishlist =>
@@ -57,7 +46,8 @@ class WishlistsIndex extends React.Component {
                 <div className="card">
                   <div className="card-content">
                     <div className="content">
-                      <h2 className="title">{wishlist.event}</h2>
+                      <h2 className="title">{wishlist.event} - {wishlist.date}</h2>
+                      <h3 className="items">{wishlist.items.length} items on this list.</h3>
                     </div>
                   </div>
                 </div>
@@ -66,12 +56,7 @@ class WishlistsIndex extends React.Component {
           )}
         </div>
 
-        <form onSubmit={this.handleSubmit}>
 
-          <Base64 name="image" handleChange={this.handleChange} />
-          <button>Submit</button>
-
-        </form>
 
       </section>
     );

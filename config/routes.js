@@ -13,6 +13,8 @@ router.route('/wishlists/:id')
   .put(wishlists.update)
   .delete(secureRoute, wishlists.delete);
 
+router.post('/wishlists/:id/items/:itemId', secureRoute, wishlists.checkItem);
+
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 router.post('/vision', vision.getVisionPic);

@@ -34,10 +34,22 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function checkItemRoute(req, res, next) {
+  Wishlist.findById(req.params.id)
+    .then(wishlist => {
+      const item = wishlist.items.id(req.params.itemId);
+      item.obtained = !item.obtained;
+      return wishlist.save();
+    })
+    .then(wishlist => res.json(wishlist))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   create: createRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  checkItem: checkItemRoute
 };

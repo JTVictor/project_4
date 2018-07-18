@@ -10,7 +10,7 @@ mongoose.connect(dbURI, (err, db) => {
     .then(() => Wishlist.create([{
       listOwner: 'Jon Townsend',
       event: 'Birthday',
-      date: '20190601',
+      date: new Date('2019-06-01'),
       items: [
         {image: 'https://media.manufactum.de/is/image/Manufactum/opengraph/italian-stainless-steel-kettle--20294_01.jpg', label: 'Kettle', obtained: false}
       ],
@@ -18,7 +18,7 @@ mongoose.connect(dbURI, (err, db) => {
     }, {
       listOwner: 'Santa Claus',
       event: 'Christmas',
-      date: '20191225',
+      date: new Date('2019-06-01'),
       items: [
         {image: 'https://cdn.shopify.com/s/files/1/1180/3866/products/NEW-FEDEX-SOCKS-2710v2_1500x.jpg?v=1495468418', label: 'Socks', obtained: false}
       ],

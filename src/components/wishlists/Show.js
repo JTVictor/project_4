@@ -51,6 +51,13 @@ class WishlistsShow extends React.Component {
     this.setState({ [name]: value }, () => console.log(this.state));
   }
 
+  handleCheckItem = item =>{
+    axios.post(`/api/wishlists/${this.props.match.params.id}/items/${item._id}`, null, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(res => this.setState({ wishlist: res.data }));
+  }
+
   render() {
     return (
       <section>
@@ -68,10 +75,6 @@ class WishlistsShow extends React.Component {
           <button>Submit</button>
         </form>
 
-
-
-
-
         <div className="columns is-multiline">
           {this.state.wishlist.items.map((item, index) =>
             <div className="column is-one-quarter" key={index}>
@@ -81,6 +84,9 @@ class WishlistsShow extends React.Component {
                     <div>
                       <img className="giftImage" src={item.image} />
                       <h4>{item.label}</h4>
+                      <button onClick={() => this.handleCheckItem(item)}>
+                        {item.obtained ? 'Remove' : 'Add'}
+                      </button>
                     </div>
                   </div>
                 </div>

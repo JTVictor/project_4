@@ -1,6 +1,132 @@
 .giftImage {
-height:200px;
-width: 200px;
-object-fit: cover;
-object-position: top 75%;
+  width: 400px;
+  object-fit: contain;
+
+}
+
+.root {
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  background-color: #009432;
+  height: 100px;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.navbar-menu {
+  background-color: #009432;
+  height: 50px;
+  border: 0px;
+  align-content: center;
+
+}
+
+.navbar-item {
+  color: #FFC312;
+  font-size: 35px;
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  font-size: 28px;
+}
+
+.field {
+display: flex;
+height: 100px;
+flex-direction: column;
+}
+
+.label {
+  display: flex;
+  color: #FFC312;
+  height: 50px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.input {
+  display: flex;
+  background-color: #ED4C67;
+  width: 800px;
+  height: 50px;
+  align-content: center;
+  border-radius: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #FFC312;
+  border: 0px;
+  align-content: center;
+  flex-direction: column;
+}
+
+.button {
+  background-color: #0652DD;
+  width: 800px;
+  height: 50px;
+  border-radius: 0px;
+  border: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: #FFC312;
+}
+
+.form {
+ display: flex;
+ justify-content: center;
+ margin-left: 25px;
+ margin-right: 25px;
+
+}
+
+.username {
+  color: #FFC312;
+}
+
+.email {
+  color: #FFC312;
+}
+
+.password {
+  color: #FFC312;
+}
+
+.passwordConfirmation {
+  color: #FFC312;
+}
+
+h2.title {
+  color: red;
+}
+
+h3.items {
+  color: #FFC312;
+}
+
+h4 {
+  color: #FFC312;
+}
+.card-content {
+  background-color: #9980FA;
+
+  .button {
+    background-color: red;
+  }
+}
+
+
+
+body {
+  display: flex;
+  background-color: #009432;
+  min-height: 100vh;
+  font-size: 30px;
+  font-family: 'Questrial', sans-serif;
+  flex-direction: column;
+
 }
