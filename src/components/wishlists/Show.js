@@ -72,20 +72,20 @@ class WishlistsShow extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <Base64 name="image" handleChange={this.handleChange} />
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </form>
 
-        <div className="columns is-multiline">
+        <div className="columns is-mobile is-multiline">
           {this.state.wishlist.items.map((item, index) =>
-            <div className="column is-one-quarter" key={index}>
+            <div className="column is-half-mobile is-one-quarter-desktop is-one-third-tablet" key={index}>
               <div className="card">
                 <div className="card-content">
                   <div className="content">
                     <div>
                       <img className="giftImage" src={item.image} />
                       <h4>{item.label}</h4>
-                      <button onClick={() => this.handleCheckItem(item)}>
-                        {item.obtained ? 'Remove' : 'Add'}
+                      <button className="button" onClick={() => this.handleCheckItem(item)}>
+                        {item.obtained ? 'GOT' : 'NEED'}
                       </button>
                     </div>
                   </div>

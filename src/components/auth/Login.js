@@ -29,8 +29,8 @@ class AuthLogin extends React.Component {
 
   render() {
     return (
-      <div className="media-content">
-        <form onSubmit={this.handleSubmit}>
+      <div className="columns is-centered">
+        <form onSubmit={this.handleSubmit} className="column is-8">
           <div className="field">
             <label className="email">Email</label>
             <input className="input" name="email" placeholder="Email" onChange={this.handleChange} />

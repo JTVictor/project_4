@@ -18,15 +18,17 @@ class App extends React.Component {
     return (
 
       <BrowserRouter>
-        <main>
-          <Navbar />
-          <Switch>
-            <Route path="/wishlists/new" component={WishlistsNew} />
-            <Route path="/wishlists/:id" component={WishlistsShow} />
-            <Route path="/wishlists" component={WishlistsIndex} />
-            <Route path="/login" component={AuthLogin} />
-            <Route path="/register" component={AuthRegister} />
-          </Switch>
+        <main className="section">
+          <div className="conatiner">
+            <Navbar />
+            <Switch>
+              <Route path="/wishlists/new" component={WishlistsNew} />
+              <Route path="/wishlists/:id" component={WishlistsShow} />
+              <Route path="/wishlists" component={WishlistsIndex} />
+              <Route path="/login" component={AuthLogin} />
+              <Route path="/register" component={AuthRegister} />
+            </Switch>
+          </div>
         </main>
       </BrowserRouter>
 

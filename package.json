@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
-    "startup": "yarn build && node index",
+    "start": "yarn build && node index",
     "start:client": "webpack-dev-server",
     "start:server": "nodemon",
     "seed": "node db/seeds",
